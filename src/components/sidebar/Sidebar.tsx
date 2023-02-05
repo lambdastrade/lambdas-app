@@ -1,21 +1,13 @@
 import { classNames } from '../../common/classNames';
 import {
-  CalendarIcon,
+  CursorArrowRippleIcon,
   HomeIcon,
-  MagnifyingGlassCircleIcon,
-  MapIcon,
-  MegaphoneIcon,
-  UserGroupIcon,
-  XMarkIcon
 } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Teams', href: '#', icon: UserGroupIcon, current: false },
-  { name: 'Directory', href: '#', icon: MagnifyingGlassCircleIcon, current: false },
-  { name: 'Announcements', href: '#', icon: MegaphoneIcon, current: false },
-  { name: 'Office Map', href: '#', icon: MapIcon, current: false }
+  { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: true },
+  { name: 'Composer', href: '/composer', icon: CursorArrowRippleIcon, current: false },
 ];
 
 const Sidebar: React.FunctionComponent = () => {
@@ -30,9 +22,9 @@ const Sidebar: React.FunctionComponent = () => {
             <nav className="mt-5 flex-1" aria-label="Sidebar">
               <div className="space-y-1 px-2">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className={classNames(
                       item.current
                         ? 'bg-gray-200 text-gray-900'
@@ -47,7 +39,7 @@ const Sidebar: React.FunctionComponent = () => {
                       aria-hidden="true"
                     />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </nav>
