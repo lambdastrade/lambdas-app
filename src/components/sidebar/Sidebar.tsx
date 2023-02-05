@@ -28,11 +28,11 @@ const Sidebar: React.FunctionComponent = () => {
             <div className="flex w-64 flex-col ">
                 <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
                     <div className="flex flex-1 flex-col overflow-y-auto pt-4 pb-4">
-                        <div className="flex flex-shrink-0 ml-5 items-center px-4 text-lg font-jakarta text-gray-800 font-semibold mb-8 cursor-default select-none mt-1">
+                        <div className="flex flex-shrink-0 align-center justify-center items-center px-4 text-lg font-jakarta text-gray-800 font-semibold mb-8 cursor-default select-none mt-2">
                             <GlobeEuropeAfricaIcon className="w-7 h-7 mr-3" />
                             lambdas
                         </div>
-                        <nav className="mt-5 ml-5  flex-1" aria-label="Sidebar">
+                        <nav className="mt-5 ml-10  flex-1" aria-label="Sidebar">
                             <div className="space-y-1 px-3">
                                 {routes.map((item) => (
                                     <Link
@@ -41,8 +41,8 @@ const Sidebar: React.FunctionComponent = () => {
                                         className={classNames(
                                             item.current
                                                 ? 'text-gray-800'
-                                                : 'text-gray-500 hover:text-gray-800',
-                                            'group flex items-center px-2 py-2 text-base font-semibold font-jakarta rounded-md'
+                                                : 'text-gray-500 hover:text-gray-800 hover:ml-3',
+                                            'group flex items-center px-2 py-2 text-base font-semibold font-jakarta rounded-md transition-all duration-200 ease-in-out'
                                         )}>
                                         <item.icon
                                             className={classNames(
