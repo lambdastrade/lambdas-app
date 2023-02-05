@@ -29,7 +29,7 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                         ' shadow-sm lg:static lg:overflow-y-visible'
                     )
                 }>
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-white">
                     <div className="relative flex justify-between lg:gap-8 xl:grid xl:grid-cols-12">
                         <div className="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-8">
                             <div className="flex items-center px-6 py-4 md:mx-auto md:max-w-3xl lg:mx-0 lg:max-w-sm xl:px-0">

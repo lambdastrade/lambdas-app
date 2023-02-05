@@ -7,7 +7,8 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import AuthenticationWrapper from './components/authentication-wrapper/AuthenticationWrapper';
 import DocumentTitle from './components/document-title/DocumentTitle';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './components/not-found/ErrorPage';
+import ErrorPage from './components/pages/not-found/ErrorPage';
+import Composer from './components/pages/composer/Composer';
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'composer',
-                element: <div>Calendar</div>
+                element: <Composer />
             }
         ]
     }

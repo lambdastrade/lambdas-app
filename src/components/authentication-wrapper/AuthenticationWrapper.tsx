@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect } from "react";
 import { AuthenticationWrapperProps } from "../../ts/interfaces/AuthenticationWrapperProps";
-import NoAuth from "../not-authenticated/NoAuth";
+import NoAuth from "../pages/not-authenticated/NoAuth";
 import Spinner from "../spinner/Spinner";
 
 
