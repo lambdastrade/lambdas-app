@@ -1,7 +1,5 @@
 import { classNames } from '../../common/classNames';
-import {
-    GlobeEuropeAfricaIcon,
-} from '@heroicons/react/24/outline';
+import { GlobeEuropeAfricaIcon } from '@heroicons/react/24/outline';
 import { Link, useLocation } from 'react-router-dom';
 import React, { useContext, useEffect, useState } from 'react';
 import RouteContext from '../../contexts/RouteContext';
@@ -25,14 +23,14 @@ const Sidebar: React.FunctionComponent = () => {
 
     return (
         <div className="hidden lg:flex lg:flex-shrink-0">
-            <div className="flex w-64 flex-col ">
+            <div className="flex w-60 flex-col ">
                 <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
-                    <div className="flex flex-1 flex-col overflow-y-auto pt-4 pb-4">
-                        <div className="flex flex-shrink-0 align-center justify-center items-center px-4 text-lg font-jakarta text-gray-800 font-semibold mb-8 cursor-default select-none mt-2">
+                    <div className="flex flex-1 align-center justify-center items-center flex-col overflow-y-auto pt-4 pb-4">
+                        <div className="flex flex-shrink-0 px-4 text-xl font-jakarta text-gray-800 font-semibold mb-8 cursor-default select-none mt-2">
                             <GlobeEuropeAfricaIcon className="w-7 h-7 mr-3" />
                             lambdas
                         </div>
-                        <nav className="mt-5 ml-10  flex-1" aria-label="Sidebar">
+                        <nav className="mt-5 flex-1" aria-label="Sidebar">
                             <div className="space-y-1 px-3">
                                 {routes.map((item) => (
                                     <Link
