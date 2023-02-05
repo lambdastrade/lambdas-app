@@ -16,7 +16,7 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
     props: React.PropsWithChildren<{ children: any }>
 ) => {
     const userNavigation = [
-        { name: 'Profile', href: '#', icon: UserIcon },
+        { name: 'Account', href: '#', icon: UserIcon },
         { name: 'Billing', href: '#', icon: BanknotesIcon },
         { name: 'Settings', href: '#', icon: Cog6ToothIcon },
         { name: 'Sign out', href: '#', icon: ArrowLeftOnRectangleIcon }
@@ -95,7 +95,7 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                                                 Pro
                                             </span>
                                         </div>
-                                        <div className='pt-2'>
+                                        <div className="pt-2">
                                             {userNavigation.map((item) => (
                                                 <Menu.Item key={item.name}>
                                                     {({ active }: any) => (
