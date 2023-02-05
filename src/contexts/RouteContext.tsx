@@ -1,4 +1,4 @@
-import { ArrowUturnUpIcon, BeakerIcon, HomeModernIcon } from '@heroicons/react/24/outline';
+import { ArrowUturnUpIcon, HomeModernIcon, PencilIcon } from '@heroicons/react/24/outline';
 import React, { ForwardRefExoticComponent, SVGProps } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
@@ -8,7 +8,7 @@ import ErrorPage from '../components/pages/not-found/ErrorPage';
 
 const routes = [
     { name: 'Dashboard', href: '/dashboard', icon: HomeModernIcon, current: true },
-    { name: 'Composer', href: '/composer', icon: BeakerIcon, current: false },
+    { name: 'Composer', href: '/composer', icon: PencilIcon, current: false },
     { name: 'Deployment', href: '/deployment', icon: ArrowUturnUpIcon, current: false }
 ];
 

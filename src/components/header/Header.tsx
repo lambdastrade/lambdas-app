@@ -83,19 +83,24 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                                     leaveFrom="transform opacity-100 scale-100"
                                     leaveTo="transform opacity-0 scale-95">
                                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right divide-y divide-gray-200 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                        <div className="flex justify-between py-2 px-4 text-sm font-semibold text-gray-800 mb-1 font-jakarta">
-                                            Kristof Varadi
-                                            <span className="inline-flex items-center rounded-full border-purple-500 border bg-purple-100 cursor-pointer px-2.5 py-0.5 text-xs font-medium text-purple-800">
-                                                <svg
-                                                    className="-ml-0.5 mr-1.5 h-2 w-2 text-purple-400"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 8 8">
-                                                    <circle cx={4} cy={4} r={3} />
-                                                </svg>
-                                                Pro
-                                            </span>
+                                        <div className="my-2">
+                                            <div className="flex justify-between py-2 px-4 text-sm font-semibold text-gray-800 font-jakarta">
+                                                Kristof Varadi
+                                                <span className="inline-flex items-center rounded-full border-purple-500 border bg-purple-100 cursor-pointer px-2.5 py-0.5 text-xs font-medium text-purple-800">
+                                                    <svg
+                                                        className="-ml-0.5 mr-1.5 h-2 w-2 text-purple-400"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 8 8">
+                                                        <circle cx={4} cy={4} r={3} />
+                                                    </svg>
+                                                    Pro
+                                                </span>
+                                            </div>
+                                            <div className="px-4 text-xs font-semibold text-gray-400 pb-1 font-jakarta ">
+                                                14 days left until your subscription renews.
+                                            </div>
                                         </div>
-                                        <div className="pt-2">
+                                        <div className="pt-2 pb-1">
                                             {userNavigation.map((item) => (
                                                 <Menu.Item key={item.name}>
                                                     {({ active }: any) => (
