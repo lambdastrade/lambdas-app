@@ -1,21 +1,16 @@
 import { Menu, Popover, Transition } from '@headlessui/react';
-import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import React, { Children, Fragment } from 'react';
+import { BellIcon, MagnifyingGlassIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { classNames } from '../../common/classNames';
 
 const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>> = (
     props: React.PropsWithChildren<{ children: any }>
 ) => {
-    const user = {
-        name: 'Chelsea Hagon',
-        email: 'chelsea.hagon@example.com',
-        imageUrl:
-            'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-    };
 
     const userNavigation = [
         { name: 'Your Profile', href: '#' },
-        { name: 'Settings', href: '#' },
+        { name: 'Settings', href: '/settings' },
         { name: 'Sign out', href: '#' }
     ];
 
@@ -32,7 +27,7 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-white">
                     <div className="relative flex justify-between lg:gap-8 xl:grid xl:grid-cols-12">
                         <div className="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-8">
-                            <div className="flex items-center px-6 py-4 md:mx-auto md:max-w-3xl lg:mx-0 lg:max-w-sm xl:px-0">
+                            <div className="flex items-center px-6 py-3 md:mx-auto md:max-w-3xl lg:mx-0 lg:max-w-sm xl:px-0">
                                 <div className="w-full">
                                     <label htmlFor="search" className="sr-only">
                                         Search
@@ -59,21 +54,16 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                         <div className="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
                             <a
                                 href="#"
-                                className="ml-5 flex-shrink-0 rounded-full  p-1 text-gray-400 hover:text-gray-500 focus:outline-none">
+                                className="ml-5 flex-shrink-0 rounded-full  p-1 text-gray-400 hover:text-gray-600 focus:outline-none">
                                 <span className="sr-only">View notifications</span>
                                 <BellIcon className="h-6 w-6" aria-hidden="true" />
                             </a>
 
-                            {/* Profile dropdown */}
-                            <Menu as="div" className="relative ml-5 flex-shrink-0">
+                            <Menu as="div" className="relative ml-2 flex-shrink-0">
                                 <div>
-                                    <Menu.Button className="flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                    <Menu.Button className="flex rounded-full bg-white focus:outline-none text-gray-400 hover:text-gray-600">
                                         <span className="sr-only">Open user menu</span>
-                                        <img
-                                            className="h-8 w-8 rounded-full"
-                                            src={user.imageUrl}
-                                            alt=""
-                                        />
+                                        <UserCircleIcon className="w-7 h-7" />
                                     </Menu.Button>
                                 </div>
                                 <Transition
@@ -88,14 +78,14 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                                         {userNavigation.map((item) => (
                                             <Menu.Item key={item.name}>
                                                 {({ active }) => (
-                                                    <a
-                                                        href={item.href}
+                                                    <Link
+                                                        to={item.href}
                                                         className={classNames(
                                                             active ? 'bg-gray-100' : '',
                                                             'block py-2 px-4 text-sm text-gray-700'
                                                         )}>
                                                         {item.name}
-                                                    </a>
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                         ))}

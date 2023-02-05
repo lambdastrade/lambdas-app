@@ -1,14 +1,13 @@
 import {
-    ArrowDownOnSquareStackIcon,
+    ArchiveBoxArrowDownIcon,
     ArrowPathRoundedSquareIcon,
     Cog6ToothIcon,
     CubeTransparentIcon,
-    CursorArrowRaysIcon,
-    PlusIcon
+    PlayCircleIcon,
+    PlusCircleIcon
 } from '@heroicons/react/24/outline';
 import { useCallback } from 'react';
 import ReactFlow, {
-    MiniMap,
     Controls,
     Background,
     useNodesState,
@@ -22,12 +21,17 @@ import 'reactflow/dist/style.css';
 
 const initialNodes = [
     { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
-    { id: '2', position: { x: 0, y: 100 }, data: { label: '2' } }
+    { id: '2', position: { x: 0, y: 100 }, data: { label: '2' } },
+    { id: '3', position: { x: 0, y: 200 }, data: { label: '3' } },
+    { id: '4', position: { x: 0, y: 300 }, data: { label: '4' } }
 ];
 
 const initialEdges = [
     {
-        id: 'e1-2', source: '1', target: '2', type: 'smoothstep',
+        id: 'e1-2',
+        source: '1',
+        target: '2',
+        type: 'smoothstep'
     }
 ];
 
@@ -57,27 +61,29 @@ const Composer: React.FunctionComponent = () => {
                 </div>
             </Panel>
             <Panel position="top-right">
-                <div className="text-sm text-gray-400 rounded-md shadow-md grid gap-4 grid-flow-col shadow-gray-200 bg-white py-2 px-5 font-medium font-jakarta">
-                    <button>
-                        <PlusIcon className="w-5 h-5" />
+                <div className="text-sm text-gray-500  rounded-md shadow-md grid gap-4 grid-flow-col shadow-gray-200 bg-white py-2 px-5 font-medium font-jakarta">
+                    <button className="hover:text-gray-900">
+                        <PlayCircleIcon className="w-5 h-5" />
                     </button>
-                    <button>
-                        <CubeTransparentIcon className="w-5 h-5" />
-                    </button>
-                    <hr />
-                    <button>
-                        <ArrowDownOnSquareStackIcon className="w-5 h-5" />
-                    </button>
-                    <button>
+                    <button className="hover:text-gray-900">
                         <ArrowPathRoundedSquareIcon className="w-5 h-5" />
                     </button>
                     <hr />
-                    <button>
+                    <button className="hover:text-gray-900">
+                        <PlusCircleIcon className="w-5 h-5" />
+                    </button>
+                    <button className="hover:text-gray-900">
+                        <CubeTransparentIcon className="w-5 h-5" />
+                    </button>
+                    <button className="hover:text-gray-900">
+                        <ArchiveBoxArrowDownIcon className="w-5 h-5" />
+                    </button>
+                    <hr />
+                    <button className="hover:text-gray-900">
                         <Cog6ToothIcon className="w-5 h-5" />
                     </button>
                 </div>
             </Panel>
-            {/* <MiniMap zoomable /> */}
             <Controls />
             <Background variant={BackgroundVariant.Lines} />
         </ReactFlow>

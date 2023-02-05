@@ -9,6 +9,7 @@ import DocumentTitle from './components/document-title/DocumentTitle';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './components/pages/not-found/ErrorPage';
 import Composer from './components/pages/composer/Composer';
+import Settings from './components/pages/settings/Settings';
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
                 element: <Composer />
             }
         ]
+    },
+    {
+        path: '/settings',
+        element: <AuthenticationWrapper App={Settings} />,
+        errorElement: <ErrorPage />
     }
 ]);
 

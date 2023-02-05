@@ -1,38 +1,54 @@
 import { classNames } from '../../common/classNames';
-import { CursorArrowRippleIcon, HomeIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
-
-const navigation = [
-    { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: true },
-    { name: 'Composer', href: '/composer', icon: CursorArrowRippleIcon, current: false }
-];
+import {
+    GlobeEuropeAfricaIcon,
+} from '@heroicons/react/24/outline';
+import { Link, useLocation } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import RouteContext from '../../contexts/RouteContext';
 
 const Sidebar: React.FunctionComponent = () => {
+    const routeContext = useContext(RouteContext);
+    const [routes, setRoutes] = useState(routeContext.routes);
+    const routeLocation = useLocation();
+
+    useEffect(() => {
+        console.log('route changed to: ' + routeLocation.pathname);
+        const updatedRoutes = routeContext.routes.map((route: any) => {
+            if (route.href === routeLocation.pathname) {
+                return { ...route, current: true };
+            } else {
+                return { ...route, current: false };
+            }
+        });
+        setRoutes(updatedRoutes);
+    }, [routeLocation, routeContext]);
+
     return (
         <div className="hidden lg:flex lg:flex-shrink-0">
             <div className="flex w-64 flex-col ">
                 <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
-                    <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
-                        <div className="flex flex-shrink-0 items-center px-4 text-lg font-jakarta text-gray-800 font-bold">
-                            Lambdas
+                    <div className="flex flex-1 flex-col overflow-y-auto pt-4 pb-4">
+                        <div className="flex flex-shrink-0 ml-5 items-center px-4 text-lg font-jakarta text-gray-800 font-semibold mb-8 cursor-default select-none mt-1">
+                            <GlobeEuropeAfricaIcon className="w-7 h-7 mr-3" />
+                            lambdas
                         </div>
-                        <nav className="mt-5 flex-1" aria-label="Sidebar">
-                            <div className="space-y-1 px-2">
-                                {navigation.map((item) => (
+                        <nav className="mt-5 ml-5  flex-1" aria-label="Sidebar">
+                            <div className="space-y-1 px-3">
+                                {routes.map((item) => (
                                     <Link
                                         key={item.name}
                                         to={item.href}
                                         className={classNames(
                                             item.current
-                                                ? 'text-gray-700'
-                                                : 'text-gray-400 hover:text-gray-700',
-                                            'group flex items-center px-2 py-2 text-sm font-medium font-jakarta rounded-md'
+                                                ? 'text-gray-800'
+                                                : 'text-gray-500 hover:text-gray-800',
+                                            'group flex items-center px-2 py-2 text-base font-semibold font-jakarta rounded-md'
                                         )}>
                                         <item.icon
                                             className={classNames(
                                                 item.current
-                                                    ? 'text-gray-900'
-                                                    : 'text-gray-500 group-hover:text-gray-900',
+                                                    ? 'text-gray-500'
+                                                    : 'text-gray-400 group-hover:text-gray-500',
                                                 'mr-4 h-6 w-6'
                                             )}
                                             aria-hidden="true"
