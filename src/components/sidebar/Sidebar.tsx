@@ -10,7 +10,6 @@ const Sidebar: React.FunctionComponent = () => {
     const routeLocation = useLocation();
 
     useEffect(() => {
-        console.log('route changed to: ' + routeLocation.pathname);
         const updatedRoutes = routeContext.routes.map((route: any) => {
             if (route.href === routeLocation.pathname) {
                 return { ...route, current: true };
