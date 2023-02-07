@@ -5,7 +5,7 @@ import Sidebar from './components/sidebar/Sidebar';
 const App: React.FunctionComponent = () => {
     return (
         <>
-            <div className="flex h-screen">
+            <div className="flex h-screen font">
                 <Sidebar />
                 <Header>
                     <Outlet />

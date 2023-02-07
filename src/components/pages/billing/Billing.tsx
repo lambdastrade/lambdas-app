@@ -1,7 +1,20 @@
+import { BillingDetails } from './billing-details/BillingDetails';
+import { SubscriptionDetails } from './subscription-details/SubscriptionDetails';
+
 export const Billing = () => {
-  return (
-      <div className="h-full bg-indigo-100 p-5 rounded-md border border-indigo-700 text-indigo-700">
-          Billing
-      </div>
-  );
-}
+    return (
+        <>
+            <div className="px-52 py-10 ">
+                <div className="border-b border-gray-400 pb-4 mb-10 font-jakarta">
+                    <h3 className="text-xl font-medium leading-7 text-gray-800">
+                        Billing Information
+                    </h3>
+                </div>
+                <div className="space-y-5">
+                    <BillingDetails />
+                    <SubscriptionDetails />
+                </div>
+            </div>
+        </>
+    );
+};

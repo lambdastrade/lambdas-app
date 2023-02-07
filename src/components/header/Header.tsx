@@ -33,7 +33,7 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                     </div>
                 </div>
             </Popover>
-            <div className="flex-grow p-5">{props.children}</div>
+            <div className="flex-grow p-5 overflow-y-auto">{props.children}</div>
         </div>
     );
 };
