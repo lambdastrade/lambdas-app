@@ -35,7 +35,7 @@ const initialEdges = [
     }
 ];
 
-const Composer: React.FunctionComponent = () => {
+const Projects: React.FunctionComponent = () => {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
@@ -90,4 +90,4 @@ const Composer: React.FunctionComponent = () => {
     );
 };
 
-export default Composer;
+export default Projects;

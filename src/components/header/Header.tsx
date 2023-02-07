@@ -1,4 +1,5 @@
 import { Popover } from '@headlessui/react';
+import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 import { classNames } from '../../common/classNames';
 import NotificationMenu from './notification-menu/NotificationMenu';
@@ -9,7 +10,7 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
     props: React.PropsWithChildren<{ children: any }>
 ) => {
     return (
-        <div className="min-h-screen w-full bg-gray-100">
+        <div className="w-full flex flex-col bg-gray-100">
             <Popover
                 as="header"
                 className={({ open }) =>
@@ -21,6 +22,7 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                 <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 bg-white">
                     <div className="relative flex justify-between lg:gap-8 xl:grid xl:grid-cols-12">
                         <SearchBar />
+
                         <div className="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
                             <NotificationMenu />
                             <UserMenu />
@@ -31,10 +33,11 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
                     </div>
                 </div>
             </Popover>
-
-            {props.children}
+            <div className="flex-grow p-5">{props.children}</div>
         </div>
     );
 };
 
 export default Header;
+
+

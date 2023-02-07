@@ -1,5 +1,5 @@
-import React from "react";
-import { ForwardRefExoticComponent, SVGProps } from "react";
+import React from 'react';
+import { ForwardRefExoticComponent, SVGProps } from 'react';
 
 const notifications = [
     {
@@ -39,7 +39,7 @@ interface NotificationContextType {
 }
 
 const NotificationContext: React.Context<NotificationContextType> = React.createContext({
-    notifications: notifications,
+    notifications: notifications
 });
 
 export default NotificationContext;

@@ -1,20 +1,21 @@
-import { ArrowLeftOnRectangleIcon, ArrowUturnUpIcon, BanknotesIcon, Cog6ToothIcon, HomeModernIcon, PencilIcon, UserIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftOnRectangleIcon, ArrowUturnUpIcon, Cog6ToothIcon, CreditCardIcon, FolderOpenIcon, HomeModernIcon, UserIcon } from '@heroicons/react/24/outline';
 import React, { ForwardRefExoticComponent, SVGProps } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import AuthenticationWrapper from '../components/authentication-wrapper/AuthenticationWrapper';
-import Composer from '../components/pages/composer/Composer';
+import Dashboard from '../components/pages/dashboard/Dashboard';
 import ErrorPage from '../components/pages/not-found/ErrorPage';
+import Projects from '../components/pages/projects/Projects';
 
 const mainRoutes = [
     { name: 'Dashboard', href: '/dashboard', icon: HomeModernIcon, current: true },
-    { name: 'Composer', href: '/composer', icon: PencilIcon, current: false },
+    { name: 'Projects', href: '/projects', icon: FolderOpenIcon, current: false },
     { name: 'Deployment', href: '/deployment', icon: ArrowUturnUpIcon, current: false }
 ];
 
 const userRoutes = [
     { name: 'Account', href: '/account', icon: UserIcon },
-    { name: 'Billing', href: '/billing', icon: BanknotesIcon },
+    { name: 'Billing', href: '/billing', icon: CreditCardIcon },
     { name: 'Settings', href: '/settings', icon: Cog6ToothIcon },
     { name: 'Sign out', href: '/logout', icon: ArrowLeftOnRectangleIcon }
 ];
@@ -27,11 +28,11 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: 'dashboard',
-                element: <div>Dashboard</div>
+                element: <Dashboard />
             },
             {
-                path: 'composer',
-                element: <Composer />
+                path: 'projects',
+                element: <Projects />
             },
             {
                 path: 'deployment',

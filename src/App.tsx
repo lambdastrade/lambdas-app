@@ -3,10 +3,9 @@ import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 
 const App: React.FunctionComponent = () => {
-
     return (
         <>
-            <div className="flex h-full min-h-screen">
+            <div className="flex h-screen">
                 <Sidebar />
                 <Header>
                     <Outlet />

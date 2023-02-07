@@ -31,7 +31,11 @@ const notificationStyles = [
 
 const NotificationMenu: React.FunctionComponent = () => {
     const notificationContext = useContext(NotificationContext);
-    const notifications = notificationContext.notifications;
+    let notifications = notificationContext.notifications;
+
+    const deleteNotification = (item: any) => {
+        notifications = notifications.splice(notifications.indexOf(item), 1); // somehow doesn't update!;
+    }
 
     return (
         <>
@@ -64,6 +68,12 @@ const NotificationMenu: React.FunctionComponent = () => {
                             </span>
                         </div>
                         <div className="max-h-80 min-h-fit overflow-auto">
+                            {notifications.length === 0 && (
+                                <div className="flex items-center justify-center align-middle font-jakarta text-sm text-gray-500 py-3">
+                                    No Notifications 😵
+                                </div>
+                            )}
+
                             {notifications.map((item) => {
                                 const itemStyle = notificationStyles[item.class - 1];
                                 return (
@@ -89,7 +99,12 @@ const NotificationMenu: React.FunctionComponent = () => {
                                                         {item.detail}
                                                     </p>
                                                 </div>
-                                                <XMarkIcon className="w-4 h-4 text-gray-500" />
+                                                <button
+                                                    onClick={() => {
+                                                        deleteNotification(item);
+                                                    }}>
+                                                    <XMarkIcon className="w-4 h-4 text-gray-500" />
+                                                </button>
                                             </div>
                                         )}
                                     </Menu.Item>

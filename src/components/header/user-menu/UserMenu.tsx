@@ -31,12 +31,6 @@ const UserMenu: React.FunctionComponent<{}> = () => {
                             <div className="flex justify-between py-2 select-none px-4 text-sm font-semibold text-gray-800 font-jakarta">
                                 Kristof Varadi
                                 <span className="inline-flex items-center rounded-full border-purple-500 border bg-purple-100 cursor-pointer px-2.5 py-0.5 text-xs font-medium text-purple-800">
-                                    <svg
-                                        className="-ml-0.5 mr-1.5 h-2 w-2 text-purple-400"
-                                        fill="currentColor"
-                                        viewBox="0 0 8 8">
-                                        <circle cx={4} cy={4} r={3} />
-                                    </svg>
                                     Pro
                                 </span>
                             </div>
