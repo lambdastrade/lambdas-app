@@ -3,9 +3,13 @@ import React, { ForwardRefExoticComponent, SVGProps } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import AuthenticationWrapper from '../components/authentication-wrapper/AuthenticationWrapper';
+import Account from '../components/pages/account/Account';
+import { Billing } from '../components/pages/billing/Billing';
 import Dashboard from '../components/pages/dashboard/Dashboard';
+import Deployment from '../components/pages/deployment/Deployment';
 import ErrorPage from '../components/pages/not-found/ErrorPage';
 import Projects from '../components/pages/projects/Projects';
+import Settings from '../components/pages/settings/Settings';
 
 const mainRoutes = [
     { name: 'Dashboard', href: '/dashboard', icon: HomeModernIcon, current: true },
@@ -36,19 +40,19 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'deployment',
-                element: <div>Deployment</div>
+                element: <Deployment />
             },
             {
                 path: 'account',
-                element: <div>account</div>
+                element: <Account />
             },
             {
                 path: 'billing',
-                element: <div>billing</div>
+                element: <Billing />
             },
             {
                 path: 'settings',
-                element: <div>settings</div>
+                element: <Settings />
             },
             {
                 path: 'logout',

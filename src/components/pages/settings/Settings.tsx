@@ -1,10 +1,8 @@
-import Sidebar from '../../sidebar/Sidebar';
-
 const Settings: React.FunctionComponent = () => {
     return (
         <>
-            <div className="flex h-full min-h-screen">
-                <Sidebar />
+            <div className="h-full bg-emerald-100 p-5 rounded-md border border-emerald-700 text-emerald-700">
+                Settings
             </div>
         </>
     );
