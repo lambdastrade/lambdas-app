@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import './index.css';
 
 import { Auth0Provider } from '@auth0/auth0-react';
-import AuthenticationWrapper from './components/authentication-wrapper/AuthenticationWrapper';
 import DocumentTitle from './components/document-title/DocumentTitle';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './contexts/RouteContext';

@@ -1,9 +1,14 @@
 import { PlusIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
-import SubscribeModal from '../../../modals/subscribe-modal/SubscribeModal';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import SubscribeModal from '../../../../modals/subscribe-modal/SubscribeModal';
 
 const NoSubscription = () => {
     const [modalOpen, setModalOpen] = useState(false);
+
+    useEffect(() => {
+        const res = axios.get(import.meta.env.VITE_API_URL).then(res => console.log(res));
+    }, []);
 
     return (
         <div className="py-5 px-5 font-jakarta">

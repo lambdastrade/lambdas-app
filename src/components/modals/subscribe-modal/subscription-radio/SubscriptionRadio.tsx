@@ -1,7 +1,7 @@
 import { RadioGroup } from '@headlessui/react';
-import { CheckCircleIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { CheckIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
-import { classNames } from '../../../../../common/classNames';
+import { classNames } from '../../../../common/classNames';
 
 const tiers = [
     {
