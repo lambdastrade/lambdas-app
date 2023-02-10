@@ -7,7 +7,7 @@ const NoSubscription = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
-        const res = axios.get(import.meta.env.VITE_API_URL).then(res => console.log(res));
+        const res = axios.get(import.meta.env.VITE_API_URL).then((res) => console.log(res.data));
     }, []);
 
     return (

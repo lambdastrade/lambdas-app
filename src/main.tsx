@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-
+import './assets/index.css';
 import { Auth0Provider } from '@auth0/auth0-react';
-import DocumentTitle from './components/document-title/DocumentTitle';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './contexts/RouteContext';
+import DocumentTitle from './features/misc/document-title/DocumentTitle';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Auth0Provider

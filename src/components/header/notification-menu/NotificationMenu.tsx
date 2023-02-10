@@ -8,7 +8,7 @@ import {
     XMarkIcon
 } from '@heroicons/react/24/outline';
 import { Fragment, useContext } from 'react';
-import { classNames } from '../../../common/classNames';
+import { classNames } from '../../../utils/classNames';
 import NotificationContext from '../../../contexts/NotificationContext';
 const notificationStyles = [
     {
@@ -35,7 +35,7 @@ const NotificationMenu: React.FunctionComponent = () => {
 
     const deleteNotification = (item: any) => {
         notifications = notifications.splice(notifications.indexOf(item), 1); // somehow doesn't update!;
-    }
+    };
 
     return (
         <>

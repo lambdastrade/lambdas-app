@@ -1,8 +1,16 @@
-import { ArrowLeftOnRectangleIcon, ArrowUturnUpIcon, Cog6ToothIcon, CreditCardIcon, FolderOpenIcon, HomeModernIcon, UserIcon } from '@heroicons/react/24/outline';
+import {
+    ArrowLeftOnRectangleIcon,
+    ArrowUturnUpIcon,
+    Cog6ToothIcon,
+    CreditCardIcon,
+    FolderOpenIcon,
+    HomeModernIcon,
+    UserIcon
+} from '@heroicons/react/24/outline';
 import React, { ForwardRefExoticComponent, SVGProps } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import AuthenticationWrapper from '../components/authentication-wrapper/AuthenticationWrapper';
+import AuthenticationWrapper from '../features/authentication/authentication-wrapper/AuthenticationWrapper';
 import Account from '../components/pages/account/Account';
 import { Billing } from '../components/pages/billing/Billing';
 import Dashboard from '../components/pages/dashboard/Dashboard';
@@ -83,7 +91,7 @@ interface RouteContextType {
 
 const RouteContext: React.Context<RouteContextType> = React.createContext({
     routes: mainRoutes,
-    userRoutes: userRoutes,
+    userRoutes: userRoutes
 });
 
 export default RouteContext;

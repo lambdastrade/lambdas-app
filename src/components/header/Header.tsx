@@ -1,7 +1,7 @@
 import { Popover } from '@headlessui/react';
 import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import React from 'react';
-import { classNames } from '../../common/classNames';
+import { classNames } from '../../utils/classNames';
 import NotificationMenu from './notification-menu/NotificationMenu';
 import SearchBar from './search-bar/SearchBar';
 import UserMenu from './user-menu/UserMenu';
@@ -39,5 +39,3 @@ const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>
 };
 
 export default Header;
-
-

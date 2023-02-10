@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect } from 'react';
-import NoAuth from '../pages/not-authenticated/NoAuth';
-import Spinner from '../spinner/Spinner';
+import NoAuth from '../../../components/pages/not-authenticated/NoAuth';
+import Spinner from '../../misc/spinner/Spinner';
 
 interface AuthenticationWrapperProps {
     App: React.FunctionComponent;
