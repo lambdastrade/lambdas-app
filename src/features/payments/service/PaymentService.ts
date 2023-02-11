@@ -21,15 +21,15 @@ export const getTiers: () => Promise<SubscriptionTier[]> = async () => {
 //     }
 // };
 
-export const createSubscription: (tierId: string, redirectUrl: string, canceledUrl: string) => any = async (
+export const createSubscription: (tierId: string, redirectUrl?: string) => any = async (
     tierId: string,
-    redirectUrl: string,
+    redirectUrl?: string,
 ) => {
     try {
         const res = await axios.post(
             `${
                 import.meta.env.VITE_API_URL
-            }/payments/subscription/${tierId}?redirect=${redirectUrl}`
+            }/payments/subscription/${tierId}/${redirectUrl ? `?redirect=${redirectUrl}` : ''}`
         );
         return res.data.checkout_url;
     } catch (error: unknown) {
