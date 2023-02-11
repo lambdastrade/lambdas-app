@@ -3,6 +3,7 @@ import { GlobeEuropeAfricaIcon } from '@heroicons/react/24/outline';
 import { Link, useLocation } from 'react-router-dom';
 import React, { useContext, useEffect, useState } from 'react';
 import RouteContext from '../../contexts/RouteContext';
+import Logo from '../../assets/lambdas_logo.svg';
 
 const Sidebar: React.FunctionComponent = () => {
     const routeContext = useContext(RouteContext);
@@ -25,8 +26,8 @@ const Sidebar: React.FunctionComponent = () => {
             <div className="flex w-60 flex-col ">
                 <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white">
                     <div className="flex flex-1 align-center items-center flex-col overflow-y-auto pt-4 pb-4">
-                        <div className="flex flex-shrink-0 px-4 text-xl font-jakarta text-gray-800 font-semibold mb-8 cursor-default select-none mt-2">
-                            <GlobeEuropeAfricaIcon className="w-7 h-7 mr-3" />
+                        <div className="flex flex-shrink-0 px-4 text-xl font-jakarta items-center text-gray-800 font-semibold mb-8 cursor-default select-none mt-2">
+                            <img src={Logo} alt="" className="w-10 h-10 mr-2" />
                             lambdas
                         </div>
                         <nav className="mt-5" aria-label="Sidebar">

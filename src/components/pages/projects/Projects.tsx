@@ -3,7 +3,6 @@ import ProjectsHeading from "./ProjectsHeading";
 import UserTable from "./UserTable";
 
 const Projects: React.FunctionComponent = () => {
-    
 
     return (
         <>

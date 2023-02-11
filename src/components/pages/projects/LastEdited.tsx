@@ -4,7 +4,7 @@ import { classNames } from '../../../utils/classNames';
 
 const LastEdited = () => {
     let lastEditedProjects: any[] = [...project_data.slice(0, Math.min(4, project_data.length))];
-    const bgColorSequence = ['bg-teal-600', 'bg-indigo-500', 'bg-yellow-500', 'bg-purple-500'];
+    const bgColorSequence = ['bg-emerald-600', 'bg-indigo-500', 'bg-orange-400', 'bg-purple-500'];
     for (let i = 0; i < lastEditedProjects.length; i++) {
         lastEditedProjects[i].hue = bgColorSequence[i];
     }
@@ -17,7 +17,11 @@ const LastEdited = () => {
                 className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
                 {lastEditedProjects.map((project: any) => (
                     <li key={project.name} className="col-span-1 flex rounded-md shadow-sm">
-                        <div className={classNames(project.hue, "flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md")}>
+                        <div
+                            className={classNames(
+                                project.hue,
+                                'flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md'
+                            )}>
                             {project.name.slice(0, 2)}
                         </div>
                         <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 bg-white">
