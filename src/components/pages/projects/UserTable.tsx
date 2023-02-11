@@ -1,97 +1,8 @@
-const UserTable = () => {
-    const people = [
-        {
-            name: 'Lindsay Walton',
-            title: 'Front-end Developer',
-            email: 'lindsay.walton@example.com',
-            role: 'Member'
-        },
-        {
-            name: 'Ethan James',
-            title: 'Back-end Developer',
-            email: 'ethan.james@example.com',
-            role: 'Admin'
-        },
-        {
-            name: 'Ava Robinson',
-            title: 'Full-stack Developer',
-            email: 'ava.robinson@example.com',
-            role: 'Member'
-        },
-        {
-            name: 'Mason Lee',
-            title: 'DevOps Engineer',
-            email: 'mason.lee@example.com',
-            role: 'Admin'
-        },
-        {
-            name: 'Natalie Green',
-            title: 'Product Manager',
-            email: 'natalie.green@example.com',
-            role: 'Member'
-        },
-        {
-            name: 'Oliver Clark',
-            title: 'Data Scientist',
-            email: 'oliver.clark@example.com',
-            role: 'Member'
-        },
-        {
-            name: 'Isabella Turner',
-            title: 'UX Designer',
-            email: 'isabella.turner@example.com',
-            role: 'Member'
-        },
-        {
-            name: 'Liam Baker',
-            title: 'Software Engineer',
-            email: 'liam.baker@example.com',
-            role: 'Admin'
-        },
-        {
-            name: 'Emma King',
-            title: 'Product Designer',
-            email: 'emma.king@example.com',
-            role: 'Member'
-        },
-        {
-            name: 'Noah Davis',
-            title: 'DevOps Manager',
-            email: 'noah.davis@example.com',
-            role: 'Admin'
-        },
-        {
-            name: 'Aria Martin',
-            title: 'QA Engineer',
-            email: 'aria.martin@example.com',
-            role: 'Member'
-        },
-        {
-            name: 'William Wilson',
-            title: 'Mobile Developer',
-            email: 'william.wilson@example.com',
-            role: 'Admin'
-        },
-        {
-            name: 'Sophia Hall',
-            title: 'Full-stack Engineer',
-            email: 'sophia.hall@example.com',
-            role: 'Member'
-        },
-        {
-            name: 'Michael Adams',
-            title: 'Database Administrator',
-            email: 'michael.adams@example.com',
-            role: 'Admin'
-        },
-        {
-            name: 'Olivia Taylor',
-            title: 'Systems Analyst',
-            email: 'olivia.taylor@example.com',
-            role: 'Member'
-        }
-    ];
+import { ChevronDownIcon, Cog6ToothIcon, PencilIcon } from '@heroicons/react/24/outline';
+import project_data from '../../../data/mocked/project_data';
 
+const UserTable = () => {
+    const projects = project_data;
     return (
         <div className="mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg font-jakarta">
             <table className="min-w-full divide-y divide-gray-300">
@@ -105,48 +16,70 @@ const UserTable = () => {
                         <th
                             scope="col"
                             className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-700 lg:table-cell">
-                            Title
+                            Description
                         </th>
                         <th
                             scope="col"
-                            className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-700 sm:table-cell">
-                            Email
+                            className="hidden px-3 py-3.5 text-center text-sm font-semibold text-gray-700 sm:table-cell">
+                            Components
                         </th>
                         <th
                             scope="col"
-                            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-700">
-                            Role
+                            className="px-3 py-3.5 text-center text-sm font-semibold text-gray-700">
+                            Running
                         </th>
-                        <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                            <span className="sr-only">Edit</span>
+                        <th
+                            scope="col"
+                            className="px-3 py-3.5 text-center text-sm font-semibold text-gray-700 ">
+                            Weekly Trades
+                        </th>
+                        <th
+                            scope="col"
+                            className="px-3 py-3.5 text-center text-sm font-semibold text-gray-700">
+                            Actions
                         </th>
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                    {people.map((person) => (
-                        <tr key={person.email}>
+                    {projects.map((project) => (
+                        <tr
+                            key={project.name}
+                            className="cursor-pointer hover:bg-gray-100 transition-all">
                             <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
-                                {person.name}
+                                {project.name}
                                 <dl className="font-normal lg:hidden">
                                     <dt className="sr-only">Title</dt>
-                                    <dd className="mt-1 truncate text-gray-700">{person.title}</dd>
+                                    <dd className="mt-1 truncate text-gray-700">
+                                        {project.running_instances}
+                                    </dd>
                                     <dt className="sr-only sm:hidden">Email</dt>
                                     <dd className="mt-1 truncate text-gray-500 sm:hidden">
-                                        {person.email}
+                                        {project.components}
                                     </dd>
                                 </dl>
                             </td>
-                            <td className="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">
-                                {person.title}
+                            <td className="hidden px-3 max-w-sm py-4 text-sm text-gray-500 lg:table-cell">
+                                {project.description}
                             </td>
-                            <td className="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">
-                                {person.email}
+                            <td className="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell text-center">
+                                {project.components}
                             </td>
-                            <td className="px-3 py-4 text-sm text-gray-500">{person.role}</td>
-                            <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                                    Edit<span className="sr-only">, {person.name}</span>
-                                </a>
+                            <td className="px-3 py-4 text-sm text-gray-500 text-center">
+                                {project.running_instances}
+                            </td>
+                            <td className="px-3 py-4 text-sm text-gray-500 text-center">
+                                {project.avg_trades}
+                            </td>
+                            <td className="space-x-3 py-5 text-right text-sm font-medium sm:pr-6 align-middle text-gray-400">
+                                <button>
+                                    <PencilIcon className="w-5 h-5 hover:text-gray-800 transition-all" />
+                                </button>
+                                <button>
+                                    <Cog6ToothIcon className="w-5 h-5 hover:text-gray-800 transition-all" />
+                                </button>
+                                <button>
+                                    <ChevronDownIcon className="w-5 h-5 hover:text-gray-800 mt-2 transition-all" />
+                                </button>
                             </td>
                         </tr>
                     ))}
