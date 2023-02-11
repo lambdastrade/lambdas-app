@@ -19,7 +19,7 @@ export const SpinnerButton = (props: SpinnerButtonProps) => {
                 {props.isLoading && (
                     <svg
                         aria-hidden="true"
-                        className="w-4 h-4 opacity-80 mr-2 text-neutral-100 animate-spin dark:text-neutral-500 fill-blue-700"
+                        className="w-4 h-4 opacity-80 mr-2 text-neutral-100 animate-spin fill-blue-700"
                         viewBox="0 0 100 101"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg">

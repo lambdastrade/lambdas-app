@@ -1,8 +1,12 @@
+import DashboardBody from './DashboardBody';
+import DashboardHeading from './DashboardHeading';
+
 const Dashboard: React.FunctionComponent = () => {
     return (
         <>
-            <div className="h-full bg-cyan-100 p-5 rounded-md border border-cyan-700 text-cyan-700">
-                Dashboard
+            <div className="space-y-5 w-full h-full flex flex-col flex-1">
+                <DashboardHeading />
+                <DashboardBody />
             </div>
         </>
     );

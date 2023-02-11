@@ -53,15 +53,15 @@ const TierList = (props: TierListProps) => {
                                                         </h3>
                                                         <div className="mt-1 flex items-baseline text-2xl font-bold tracking-tight text-gray-900">
                                                             ${tier.priceMonthly}
-                                                            <span className="text-lg font-semibold leading-5 tracking-normal text-gray-500">
-                                                                /mo
+                                                            <span className="text-lg font-medium leading-5 tracking-normal text-gray-400">
+                                                                /mo.
                                                             </span>
                                                         </div>
                                                         <p className="my-3 text-base leading-4 tracking-wide text-gray-400">
                                                             {tier.description}
                                                         </p>
                                                     </div>
-                                                    <div className="flex flex-1 flex-col p-2">
+                                                    <div className="flex flex-1 flex-col p-1">
                                                         <div className="flex flex-1 flex-col justify-between rounded-2xl bg-gray-100 p-5">
                                                             <ul role="list" className="space-y-4">
                                                                 {tier.features.map((feature) => (

@@ -1,8 +1,12 @@
+import DeploymentBody from "./DeploymentBody";
+import DeploymentHeading from "./DeploymentHeading";
+
 const Deployment: React.FunctionComponent = () => {
     return (
         <>
-            <div className="h-full bg-purple-100 p-5 rounded-md border border-purple-700 text-purple-700">
-                Deployment
+            <div className="space-y-5 w-full h-full flex flex-col flex-1">
+                <DeploymentHeading />
+                <DeploymentBody />
             </div>
         </>
     );
