@@ -1,27 +1,31 @@
 import { RadioGroup } from '@headlessui/react';
 import { CheckIcon } from '@heroicons/react/24/outline';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { classNames } from '../../../../utils/classNames';
-import { SubscriptionTier } from '../../../../ts/interfaces/SubscriptionTier';
+import { useState } from 'react';
+import { SubscriptionTier } from '../../../ts/interfaces/SubscriptionTier';
+import { classNames } from '../../../utils/classNames';
+import { createSubscription } from '../service/PaymentService';
 
-const SubscriptionRadio = () => {
-    const [selectedSubscription, setSelectedSubscription] = useState(undefined);
-    const [tiers, setTiers] = useState<SubscriptionTier[]>([]);
+interface TierListProps {
+    tiers: SubscriptionTier[];
+}
 
-    useEffect(() => {
+const TierList = (props: TierListProps) => {
+    const tiers = props.tiers;
+    const [selectedSubscription, setSelectedSubscription] = useState(tiers[tiers.length - 1]);
+
+    const onCheckoutClick = (tierId: string) => {
         const fetchData = async () => {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/payments/tiers`);
-            setTiers(res.data);
+            const checkoutUrl: string = await createSubscription(tierId);
+            window.location.href = checkoutUrl;
         };
         fetchData();
-    }, []);
+    };
 
     return (
         <>
             {tiers && (
                 <RadioGroup value={selectedSubscription} onChange={setSelectedSubscription}>
-                    <RadioGroup.Label className="text-2xl flex justify-center pb-5 font-semibold text-gray-700">
+                    <RadioGroup.Label className="text-2xl flex justify-center pb-5 font-semibold text-white">
                         Select your Plan
                     </RadioGroup.Label>
 
@@ -33,12 +37,12 @@ const SubscriptionRadio = () => {
                                         <span className="flex flex-1">
                                             <span className="flex flex-col">
                                                 <div
-                                                    key={tier.name}
+                                                    key={tier.id}
                                                     className={classNames(
                                                         checked
-                                                            ? 'border-transparent ring-2 ring-indigo-600 shadow-2xl'
-                                                            : 'border-gray-300 ring-1 ring-black/10 shadow-xl',
-                                                        'relative flex cursor-pointer border bg-white p-4 shadow-sm focus:outline-none',
+                                                            ? 'border-transparent ring-2 ring-offset-8  ring-white shadow-2xl'
+                                                            : 'ring-1 ring-black/10 shadow-xl opacity-60 hover:opacity-80',
+                                                        'relative flex cursor-pointer border-none bg-white p-4 shadow-sm transition-all outline-none',
                                                         'flex flex-col rounded-2xl'
                                                     )}>
                                                     <div className="p-3">
@@ -77,11 +81,14 @@ const SubscriptionRadio = () => {
                                                                 ))}
                                                             </ul>
                                                             <div className="mt-8">
-                                                                <a
+                                                                <button
+                                                                    onClick={() => {
+                                                                        onCheckoutClick(tier.id);
+                                                                    }}
                                                                     className="inline-block w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white shadow-md hover:bg-indigo-700"
                                                                     aria-describedby={tier.id}>
                                                                     Choose plan
-                                                                </a>
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -99,4 +106,4 @@ const SubscriptionRadio = () => {
     );
 };
 
-export default SubscriptionRadio;
+export default TierList;

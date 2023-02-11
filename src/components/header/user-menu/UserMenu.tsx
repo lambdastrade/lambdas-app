@@ -13,7 +13,7 @@ const UserMenu: React.FunctionComponent<{}> = () => {
         <>
             <Menu as="div" className="relative ml-2 flex-shrink-0">
                 <div>
-                    <Menu.Button className="flex rounded-full bg-white focus:outline-none text-gray-400 hover:text-gray-600">
+                    <Menu.Button className="flex rounded-full bg-white transition-all focus:outline-none text-gray-400 hover:text-gray-600">
                         <span className="sr-only">Open user menu</span>
                         <UserCircleIcon className="w-7 h-7" />
                     </Menu.Button>

@@ -40,7 +40,7 @@ const NotificationMenu: React.FunctionComponent = () => {
     return (
         <>
             <Menu as="div" className="relative ml-2 flex-shrink-0">
-                <Menu.Button className="flex rounded-full bg-white focus:outline-none text-gray-400 hover:text-gray-600">
+                <Menu.Button className="flex rounded-full bg-white focus:outline-none transition-all text-gray-400 hover:text-gray-600">
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </Menu.Button>

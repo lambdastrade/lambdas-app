@@ -2,7 +2,7 @@ import { UsersIcon } from "@heroicons/react/24/outline";
 import { useContext } from "react";
 import AccountContext, { SubscriptionType } from "../../../../contexts/AccountContext";
 import { ContentSection } from "./content-section/ContentSection";
-import NoSubscription from "./no-subscription/NoSubscription";
+import NoSubscription from "./NoSubscription";
 
 export const SubscriptionDetails = () => {
 
