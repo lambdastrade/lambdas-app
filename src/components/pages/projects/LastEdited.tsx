@@ -1,4 +1,4 @@
-import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, EllipsisVerticalIcon } from '@heroicons/react/24/outline';
 import project_data from '../../../data/mocked/project_data';
 import { classNames } from '../../../utils/classNames';
 
@@ -16,7 +16,7 @@ const LastEdited = () => {
                 role="list"
                 className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
                 {lastEditedProjects.map((project: any) => (
-                    <li key={project.name} className="col-span-1 flex rounded-md shadow-sm">
+                    <li key={project.name} className="col-span-1 flex rounded-md shadow-sm hover:scale-105 cursor-pointer transform transition-all">
                         <div
                             className={classNames(
                                 project.hue,
@@ -28,17 +28,19 @@ const LastEdited = () => {
                             <div className="flex-1 truncate px-4 py-2 text-sm">
                                 <a
                                     // href={project.href}
-                                    className="font-medium text-gray-900 hover:text-gray-600">
+                                    className="font-medium text-gray-900">
                                     {project.name}
                                 </a>
-                                <p className="text-gray-500">{project.components} Components</p>
+                                <p className="text-gray-500">
+                                    {project.components} components
+                                </p>
                             </div>
                             <div className="flex-shrink-0 pr-2">
                                 <button
                                     type="button"
-                                    className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white bg-transparent text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                    className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white bg-transparent text-gray-400">
                                     <span className="sr-only">Open options</span>
-                                    <EllipsisVerticalIcon className="h-5 w-5" aria-hidden="true" />
+                                    <ArrowRightIcon className="h-5 w-5 mr-2" aria-hidden="true" />
                                 </button>
                             </div>
                         </div>

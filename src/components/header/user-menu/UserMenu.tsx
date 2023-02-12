@@ -4,10 +4,12 @@ import { Fragment, useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { classNames } from '../../../utils/classNames';
 import RouteContext from '../../../contexts/RouteContext';
+import useUser from '../../../contexts/UserContext';
 
 const UserMenu: React.FunctionComponent<{}> = () => {
     const routeContext = useContext(RouteContext);
     const userRoutes = routeContext.userRoutes;
+    const { userData } = useUser();
 
     return (
         <>
@@ -29,7 +31,7 @@ const UserMenu: React.FunctionComponent<{}> = () => {
                     <Menu.Items className="absolute -right-10 z-10 mt-3 w-48 origin-top-right divide-y divide-gray-200 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="my-2">
                             <div className="flex justify-between py-2 select-none px-4 text-sm font-semibold text-gray-800 font-jakarta">
-                                Kristof Varadi
+                                { userData?.name ?? 'John Doe' }
                                 <span className="inline-flex items-center rounded-full border-purple-500 border bg-purple-100 cursor-pointer px-2.5 py-0.5 text-xs font-medium text-purple-800">
                                     Pro
                                 </span>

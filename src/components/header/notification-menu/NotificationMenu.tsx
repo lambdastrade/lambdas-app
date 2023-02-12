@@ -1,40 +1,15 @@
 import { Menu, Transition } from '@headlessui/react';
-import {
-    BellIcon,
-    ExclamationCircleIcon,
-    InformationCircleIcon,
-    NewspaperIcon,
-    XCircleIcon,
-    XMarkIcon
-} from '@heroicons/react/24/outline';
-import { Fragment, useContext } from 'react';
+import { BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Fragment } from 'react';
 import { classNames } from '../../../utils/classNames';
-import NotificationContext from '../../../contexts/NotificationContext';
-const notificationStyles = [
-    {
-        icon: NewspaperIcon,
-        css: 'border-green-600 text-green-600 bg-green-100'
-    },
-    {
-        icon: InformationCircleIcon,
-        css: 'border-blue-600 text-blue-600 bg-blue-100'
-    },
-    {
-        icon: ExclamationCircleIcon,
-        css: 'border-orange-600 text-orange-600 bg-orange-100'
-    },
-    {
-        icon: XCircleIcon,
-        css: 'border-red-600 text-red-600 bg-red-100'
-    }
-];
+import { notification_data } from '../../../data/mocked/notification_data';
+import { notificationStyles } from '../../../data/NotificationStyles';
 
 const NotificationMenu: React.FunctionComponent = () => {
-    const notificationContext = useContext(NotificationContext);
-    let notifications = notificationContext.notifications;
+    let notifications = notification_data;
 
     const deleteNotification = (item: any) => {
-        notifications = notifications.splice(notifications.indexOf(item), 1); // somehow doesn't update!;
+        notifications = notifications.splice(notifications.indexOf(item), 1); // somehow doesn't update!
     };
 
     return (
