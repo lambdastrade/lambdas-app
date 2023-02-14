@@ -1,6 +1,8 @@
 import { useAuth0 } from '@auth0/auth0-react';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import useUser from '../../../contexts/UserContext';
+import { api } from '../../../utils/axiosInstances';
 import Spinner from '../../misc/spinner/Spinner';
 
 interface AuthenticationWrapperProps {
@@ -12,13 +14,16 @@ const AuthenticationWrapper: React.FunctionComponent<AuthenticationWrapperProps>
 }: AuthenticationWrapperProps) => {
     const { user, isAuthenticated, isLoading, getAccessTokenSilently, loginWithRedirect } =
         useAuth0();
-    const { userData, setUserData } = useUser();
+    const { setUserData } = useUser();
 
     getAccessTokenSilently().then(
-        (resolve) => {
+        (token) => {
+            api.interceptors.request.use((req) => {
+                req.headers['Authorization'] = 'Bearer ' + token;
+                return req;
+            });
             if (user) {
                 setUserData(user);
-                console.log(user);
             }
         },
         (reject) => {

@@ -29,7 +29,7 @@ const TierList = (props: TierListProps) => {
                         Select your Plan
                     </RadioGroup.Label>
 
-                    <div className="mt-4 mx-20 h-fit grid gap-y-6 grid-cols-2 gap-x-4 select-none">
+                    <div className="mt-4 lg:mx-32 h-fit grid gap-y-6 grid-cols-2 gap-x-4 select-none">
                         {tiers.map((tier) => (
                             <RadioGroup.Option key={tier.id} value={tier}>
                                 {({ checked }) => (

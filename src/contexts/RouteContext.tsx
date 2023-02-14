@@ -18,6 +18,7 @@ import Deployment from '../components/pages/deployment/Deployment';
 import ErrorPage from '../components/pages/not-found/ErrorPage';
 import Projects from '../components/pages/projects/Projects';
 import Settings from '../components/pages/settings/Settings';
+import LogOut from '../components/pages/logout/LogOut';
 
 const mainRoutes = [
     { name: 'Dashboard', href: '/dashboard', icon: HomeModernIcon, current: true },
@@ -64,7 +65,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'logout',
-                element: <div>logout</div>
+                element: <LogOut />
             }
         ]
     }

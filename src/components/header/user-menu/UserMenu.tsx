@@ -1,6 +1,6 @@
 import { Menu, Transition } from '@headlessui/react';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
-import { Fragment, useContext, useEffect, useState } from 'react';
+import { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { classNames } from '../../../utils/classNames';
 import RouteContext from '../../../contexts/RouteContext';
