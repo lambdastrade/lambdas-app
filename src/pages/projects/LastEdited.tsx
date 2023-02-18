@@ -1,6 +1,6 @@
-import { ArrowRightIcon, EllipsisVerticalIcon } from '@heroicons/react/24/outline';
-import project_data from '../../../data/mocked/project_data';
-import { classNames } from '../../../utils/classNames';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import project_data from '../../data/mocked/project_data';
+import { classNames } from '../../utils/classNames';
 
 const LastEdited = () => {
     let lastEditedProjects: any[] = [...project_data.slice(0, Math.min(4, project_data.length))];

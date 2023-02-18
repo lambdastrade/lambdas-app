@@ -1,11 +1,11 @@
-import { classNames } from '../../../utils/classNames';
+import { classNames } from '../../utils/classNames';
 
 const DashboardHeading = () => {
-    const tabs = [
-        { name: 'Overview', href: '#', current: true },
-        { name: 'Analytics', href: '#', current: false },
-        { name: 'Portfolio', href: '#', current: false },
-        { name: 'History', href: '#', current: false }
+    const tabs: any[] = [
+        // { name: 'Overview', href: '#', current: true },
+        // { name: 'Analytics', href: '#', current: false },
+        // { name: 'Portfolio', href: '#', current: false },
+        // { name: 'History', href: '#', current: false }
     ];
     return (
         <div className="flex justify-between items-center p-2 font-jakarta">

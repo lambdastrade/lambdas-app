@@ -1,5 +1,4 @@
-import React from 'react';
-import UserCard from '../../cards/UserCard';
+import UserCard from '../../components/cards/UserCard';
 
 const DashboardBody = () => {
     return (

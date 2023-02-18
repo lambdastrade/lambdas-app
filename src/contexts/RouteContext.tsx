@@ -11,14 +11,14 @@ import React, { ForwardRefExoticComponent, SVGProps } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import AuthenticationWrapper from '../features/authentication/authentication-wrapper/AuthenticationWrapper';
-import Account from '../components/pages/account/Account';
-import { Billing } from '../components/pages/billing/Billing';
-import Dashboard from '../components/pages/dashboard/Dashboard';
-import Deployment from '../components/pages/deployment/Deployment';
-import ErrorPage from '../components/pages/not-found/ErrorPage';
-import Projects from '../components/pages/projects/Projects';
-import Settings from '../components/pages/settings/Settings';
-import LogOut from '../components/pages/logout/LogOut';
+import Account from '../pages/account/Account';
+import { Billing } from '../pages/billing/Billing';
+import Dashboard from '../pages/dashboard/Dashboard';
+import Deployment from '../pages/deployment/Deployment';
+import ErrorPage from '../pages/not-found/ErrorPage';
+import Projects from '../pages/projects/Projects';
+import Settings from '../pages/settings/Settings';
+import LogOut from '../pages/logout/LogOut';
 
 const mainRoutes = [
     { name: 'Dashboard', href: '/dashboard', icon: HomeModernIcon, current: true },

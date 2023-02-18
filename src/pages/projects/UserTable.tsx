@@ -1,5 +1,5 @@
 import { ChevronDownIcon, Cog6ToothIcon, PencilIcon } from '@heroicons/react/24/outline';
-import project_data from '../../../data/mocked/project_data';
+import project_data from '../../data/mocked/project_data';
 
 const UserTable = () => {
     const projects = project_data;

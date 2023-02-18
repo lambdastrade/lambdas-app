@@ -1,4 +1,6 @@
-import { classNames } from '../../../utils/classNames';
+import { classNames } from '../../utils/classNames';
+
+// heading tabs: remove hidden
 
 const DeploymentHeading = () => {
     const tabs = [
@@ -26,7 +28,7 @@ const DeploymentHeading = () => {
                         ))}
                     </select>
                 </div>
-                <div className="hidden sm:block">
+                <div className="hidden sm:block hidden">
                     <nav className="flex space-x-4" aria-label="Tabs">
                         {tabs.map((tab) => (
                             <a

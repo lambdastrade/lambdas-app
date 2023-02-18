@@ -1,4 +1,4 @@
-import PaymentModal from "../../../../features/payments/components/PaymentModal";
+import PaymentModal from "../../../features/payments/components/PaymentModal";
 
 const NoSubscription = () => {
     return (
