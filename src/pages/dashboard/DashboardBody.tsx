@@ -1,4 +1,5 @@
 import UserCard from '../../components/cards/UserCard';
+import PortfolioChart from '../../components/charts/PortfolioChart';
 
 const DashboardBody = () => {
     return (
@@ -8,10 +9,12 @@ const DashboardBody = () => {
             </div>
             <div className="rounded-lg col-span-4 row-span-3 p-5 ring-1 ring-black ring-opacity-5 text-gray-700 font-semibold bg-white">
                 Portfolio
+                <PortfolioChart />
             </div>
             <div className="rounded-lg col-span-3 row-span-1 p-5 ring-1 ring-black ring-opacity-5 text-gray-700 font-semibold bg-white">
                 Quick Actions
-            </div><div className="rounded-lg col-span-3 row-span-5 p-5 ring-1 ring-black ring-opacity-5 text-gray-700 font-semibold bg-white">
+            </div>
+            <div className="rounded-lg col-span-3 row-span-5 p-5 ring-1 ring-black ring-opacity-5 text-gray-700 font-semibold bg-white">
                 Notifications
             </div>
             <div className="rounded-lg col-span-5 row-span-4 p-5 ring-1 ring-black ring-opacity-5 text-gray-700 font-semibold bg-white">
@@ -20,7 +23,6 @@ const DashboardBody = () => {
             <div className="rounded-lg col-span-4 row-span-3 p-5 ring-1 ring-black ring-opacity-5 text-gray-700 font-semibold bg-white">
                 Analytics
             </div>
-            
         </div>
     );
 };

@@ -1,21 +1,22 @@
-import { classNames } from '../../utils/classNames';
+import React from 'react';
+
+// import { classNames } from '../../utils/classNames';
 
 const DashboardHeading = () => {
-    const tabs: any[] = [
-        // { name: 'Overview', href: '#', current: true },
-        // { name: 'Analytics', href: '#', current: false },
-        // { name: 'Portfolio', href: '#', current: false },
-        // { name: 'History', href: '#', current: false }
-    ];
+    // const tabs = [
+    //     { name: 'Overview', href: '#', current: true },
+    //     { name: 'Analytics', href: '#', current: false },
+    //     { name: 'Portfolio', href: '#', current: false },
+    //     { name: 'History', href: '#', current: false }
+    // ];
     return (
         <div className="flex justify-between items-center p-2 font-jakarta">
             <h3 className="text-xl font-semibold text-gray-700">Dashboard</h3>
-            <div>
+            {/* <div>
                 <div className="sm:hidden">
                     <label htmlFor="tabs" className="sr-only">
                         Select a tab
                     </label>
-                    {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
                     <select
                         id="tabs"
                         name="tabs"
@@ -44,7 +45,7 @@ const DashboardHeading = () => {
                         ))}
                     </nav>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
