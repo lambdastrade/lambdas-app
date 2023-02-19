@@ -6,10 +6,14 @@ const App: React.FunctionComponent = () => {
     return (
         <>
             <div className="flex h-screen font">
-                <Sidebar />
-                <Header>
-                    <Outlet />
-                </Header>
+                <div className="w-1/6">
+                    <Sidebar />
+                </div>
+                <div className="w-5/6">
+                    <Header>
+                        <Outlet />
+                    </Header>
+                </div>
             </div>
         </>
     );

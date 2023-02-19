@@ -3,8 +3,6 @@ import {
     ArrowUturnUpIcon,
     Cog6ToothIcon,
     CreditCardIcon,
-    FolderOpenIcon,
-    HomeModernIcon,
     UserIcon
 } from '@heroicons/react/24/outline';
 import React, { ForwardRefExoticComponent, SVGProps } from 'react';
@@ -19,11 +17,16 @@ import ErrorPage from '../pages/not-found/ErrorPage';
 import Projects from '../pages/projects/Projects';
 import Settings from '../pages/settings/Settings';
 import LogOut from '../pages/logout/LogOut';
+import { ReactComponent as HomeIcon } from '../assets/icons/home.svg';
+import { ReactComponent as ProjectsIcon } from '../assets/icons/projects.svg';
+import { ReactComponent as DeploymentIcon } from '../assets/icons/deployment.svg';
+import { ReactComponent as DashboardIcon } from '../assets/icons/dashboard.svg';
 
 const mainRoutes = [
-    { name: 'Dashboard', href: '/dashboard', icon: HomeModernIcon, current: true },
-    { name: 'Projects', href: '/projects', icon: FolderOpenIcon, current: false },
-    { name: 'Deployment', href: '/deployment', icon: ArrowUturnUpIcon, current: false }
+    { name: 'Home', href: '/home', icon: HomeIcon, current: true },
+    { name: 'Dashboard', href: '/dashboard', icon: DashboardIcon, current: true },
+    { name: 'Projects', href: '/projects', icon: ProjectsIcon, current: false },
+    { name: 'Deployment', href: '/deployment', icon: DeploymentIcon, current: false }
 ];
 
 const userRoutes = [
