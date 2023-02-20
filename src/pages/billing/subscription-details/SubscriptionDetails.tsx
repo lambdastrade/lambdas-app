@@ -10,7 +10,7 @@ export const SubscriptionDetails = () => {
     const account = accountContext.account;
 
   return (
-      <div className="px-3 py-10 overflow-hidden rounded-lg shadow ring-1 ring-black ring-opacity-5 bg-white font-jakarta">
+      <div className="px-3 py-10 overflow-hidden rounded-lg ring-1 ring-black ring-opacity-5 bg-white font-jakarta">
           <div className="sm:px-6">
               <div className="flex flex-wrap items-center justify-between">
                   <div className="pointer-default select-none flex space-x-3 items-center">

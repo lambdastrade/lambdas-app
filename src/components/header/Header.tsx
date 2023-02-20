@@ -1,40 +1,49 @@
 import { Popover } from '@headlessui/react';
-import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 import { classNames } from '../../utils/classNames';
 import NotificationMenu from './notification-menu/NotificationMenu';
 import SearchBar from './search-bar/SearchBar';
 import UserMenu from './user-menu/UserMenu';
+import Breadcrumb from './Breadcrumb';
 
-const Header: React.FunctionComponent<React.PropsWithChildren<{ children: any }>> = (
-    props: React.PropsWithChildren<{ children: any }>
-) => {
+const Header: React.FunctionComponent<
+    React.PropsWithChildren<{ pageName: string; pageDescription: string }>
+> = (props: React.PropsWithChildren<{ pageName: string; pageDescription: string }>) => {
     return (
-        <div className="w-full flex flex-col bg-gray-50">
-            <Popover
-                as="header"
-                className={({ open }) =>
-                    classNames(
-                        open ? 'fixed inset-0 z-40 overflow-y-auto' : '',
-                        'border-b lg:static lg:overflow-y-visible'
-                    )
-                }>
-                <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 bg-white">
-                    <div className="relative flex justify-between lg:gap-8 xl:grid xl:grid-cols-12">
-                        <SearchBar />
-
-                        <div className="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
-                            <NotificationMenu />
-                            <UserMenu />
-                            <button className="ml-6 inline-flex items-center rounded-md border border-transparent font-jakarta bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-300 ease-in-out">
-                                New Strategy
-                            </button>
-                        </div>
+        <Popover
+            as="header"
+            className={({ open }) =>
+                classNames(
+                    open ? 'fixed inset-0 z-40 overflow-y-auto' : '',
+                    'lg:static lg:overflow-y-visible font-jakarta'
+                )
+            }>
+            <div className="flex flex-col mx-auto w-full pt-2">
+                <div className="relative flex justify-between grid-cols-2">
+                    <Breadcrumb
+                        pageHierarchy={[{ name: props.pageName, href: '#', current: true }]}
+                    />
+                    <div className="flex justify-end items-center">
+                        <NotificationMenu />
+                        <UserMenu />
+                        <button className="ml-6 inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 transition duration-300 ease-in-out">
+                            New Strategy
+                        </button>
                     </div>
                 </div>
-            </Popover>
-            <div className="flex-1 overflow-y-auto px-10 py-5">{props.children}</div>
-        </div>
+                <div className="relative flex justify-between grid-cols-2 pt-10">
+                    <h1 className="text-gray-700 font-bold text-2xl">{props.pageName}</h1>
+                    <div className="flex justify-end">
+                        {/* <button className="ml-6 inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 transition duration-300 ease-in-out">
+                            Export data
+                        </button> */}
+                    </div>
+                </div>
+                <p className="text-sm text-gray-400 font-medium pt-3 pb-5">
+                    {props.pageDescription}
+                </p>
+            </div>
+        </Popover>
     );
 };
 

@@ -28,7 +28,7 @@ const UserMenu: React.FunctionComponent<{}> = () => {
                     leave="transition ease-in duration-75"
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95">
-                    <Menu.Items className="absolute -right-10 z-10 mt-3 w-48 origin-top-right divide-y divide-gray-200 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute -right-10 z-10 mt-3 w-48 origin-top-right divide-y divide-gray-200 rounded-md bg-white py-1 ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="my-2">
                             <div className="flex justify-between py-2 select-none px-4 text-sm font-semibold text-gray-800 font-jakarta">
                                 {userData?.name ?? 'John Doe'}

@@ -4,7 +4,7 @@ import project_data from '../../data/mocked/project_data';
 const UserTable = () => {
     const projects = project_data;
     return (
-        <div className="mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg font-jakarta">
+        <div className="mt-8 overflow-hidden ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg font-jakarta">
             <table className="min-w-full divide-y divide-gray-300">
                 <thead className="bg-gray-50">
                     <tr>

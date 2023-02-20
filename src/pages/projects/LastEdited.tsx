@@ -10,13 +10,15 @@ const LastEdited = () => {
     }
 
     return (
-        <div className="font-jakarta px-5 pb-5">
-            <h2 className="text-sm font-medium text-gray-500">Recently Edited</h2>
+        <div className="font-jakarta pb-5">
+            {/* <h2 className="text-sm font-medium text-gray-500">Recently Edited</h2> */}
             <ul
                 role="list"
                 className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
                 {lastEditedProjects.map((project: any) => (
-                    <li key={project.name} className="col-span-1 flex rounded-md shadow-sm hover:scale-105 cursor-pointer transform transition-all">
+                    <li
+                        key={project.name}
+                        className="col-span-1 flex rounded-md hover:scale-105 cursor-pointer transform transition-all">
                         <div
                             className={classNames(
                                 project.hue,
@@ -31,9 +33,7 @@ const LastEdited = () => {
                                     className="font-medium text-gray-900">
                                     {project.name}
                                 </a>
-                                <p className="text-gray-500">
-                                    {project.components} components
-                                </p>
+                                <p className="text-gray-500">{project.components} components</p>
                             </div>
                             <div className="flex-shrink-0 pr-2">
                                 <button

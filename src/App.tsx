@@ -7,9 +7,9 @@ const App: React.FunctionComponent = () => {
         <>
             <div className="flex h-screen font">
                 <Sidebar />
-                <Header>
+                <div className="flex-1 overflow-y-auto px-10 py-5 bg-gray-50">
                     <Outlet />
-                </Header>
+                </div>
             </div>
         </>
     );

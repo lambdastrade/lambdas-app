@@ -40,9 +40,9 @@ const TierList = (props: TierListProps) => {
                                                     key={tier.id}
                                                     className={classNames(
                                                         checked
-                                                            ? 'border-transparent ring-2 ring-offset-8  ring-white shadow-2xl'
-                                                            : 'ring-1 ring-black/10 shadow-xl opacity-60 hover:opacity-80',
-                                                        'relative flex cursor-pointer border-none bg-white p-4 shadow-sm transition-all outline-none',
+                                                            ? 'border-transparent ring-2 ring-offset-8  ring-white'
+                                                            : 'ring-1 ring-black/10 opacity-60 hover:opacity-80',
+                                                        'relative flex cursor-pointer border-none bg-white p-4 transition-all outline-none',
                                                         'flex flex-col rounded-2xl'
                                                     )}>
                                                     <div className="p-3">
@@ -85,7 +85,7 @@ const TierList = (props: TierListProps) => {
                                                                     onClick={() => {
                                                                         onCheckoutClick(tier.id);
                                                                     }}
-                                                                    className="inline-block w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white shadow-md hover:bg-indigo-700"
+                                                                    className="inline-block w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white hover:bg-indigo-700"
                                                                     aria-describedby={tier.id}>
                                                                     Choose plan
                                                                 </button>

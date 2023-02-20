@@ -61,7 +61,7 @@ const StrategyComposer = () => {
                 </div>
             </Panel>
             <Panel position="top-right">
-                <div className="text-sm text-gray-500  rounded-md shadow-md grid gap-4 grid-flow-col shadow-gray-200 bg-white py-2 px-5 font-medium font-jakarta">
+                <div className="text-sm text-gray-500  rounded-md grid gap-4 grid-flow-col bg-white py-2 px-5 font-medium font-jakarta">
                     <button className="hover:text-gray-900">
                         <PlayCircleIcon className="w-5 h-5" />
                     </button>
