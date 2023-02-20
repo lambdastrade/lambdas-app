@@ -1,9 +1,8 @@
 import { User } from '@auth0/auth0-react';
 import { createContext, useContext, useState } from 'react';
 
-
 interface LambdasUser extends User {
-    
+    subscripionType?: 'yearly' | 'monthly';
 }
 
 type UserContextType = {
@@ -16,7 +15,10 @@ const UserContext = createContext<UserContextType>({
     setUserData: () => {}
 });
 
-export const UserProvider = (props: { value: User | null; children: JSX.Element | JSX.Element[] }) => {
+export const UserProvider = (props: {
+    value: User | null;
+    children: JSX.Element | JSX.Element[];
+}) => {
     const [userData, setUser] = useState<User | null>(props.value);
 
     const setUserData = (user: User) => {

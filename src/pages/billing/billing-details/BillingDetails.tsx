@@ -1,10 +1,7 @@
 import { IdentificationIcon, PencilIcon, PencilSquareIcon } from '@heroicons/react/24/outline';
 import { useContext } from 'react';
-import AccountContext from '../../../../contexts/AccountContext';
 
 export const BillingDetails = () => {
-    const accountContext = useContext(AccountContext);
-    const account = accountContext.account;
 
     return (
         <div className="px-3 overflow-hidden rounded-lg border border-gray-300 bg-white font-jakarta">
