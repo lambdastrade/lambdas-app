@@ -4,7 +4,8 @@ import { classNames } from '../../utils/classNames';
 
 const LastEdited = () => {
     let lastEditedProjects: any[] = [...project_data.slice(0, Math.min(4, project_data.length))];
-    const bgColorSequence = ['bg-emerald-600', 'bg-indigo-500', 'bg-orange-400', 'bg-purple-500'];
+    // const bgColorSequence = ['bg-emerald-600', 'bg-indigo-500', 'bg-orange-400', 'bg-purple-500'];
+    const bgColorSequence = ['bg-gray-800', 'bg-gray-800', 'bg-gray-800', 'bg-gray-800'];
     for (let i = 0; i < lastEditedProjects.length; i++) {
         lastEditedProjects[i].hue = bgColorSequence[i];
     }

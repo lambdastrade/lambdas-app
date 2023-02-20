@@ -2,7 +2,7 @@ import { User } from '@auth0/auth0-react';
 import { createContext, useContext, useState } from 'react';
 
 interface LambdasUser extends User {
-    subscripionType?: 'yearly' | 'monthly';
+    subscripionType?: 'basic' | 'pro';
 }
 
 type UserContextType = {
