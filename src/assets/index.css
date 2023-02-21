@@ -3,9 +3,19 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #f3f4f6;
 }
 ::-webkit-scrollbar-thumb {
-    background: #d1d5db;
+    background-color: #d1d5db;
+    scrollbar-color: #d1d5db #f3f4f6;
+    transition: scrollbar-color 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+    scrollbar-color: #9ca3af #f3f4f6;
 }
