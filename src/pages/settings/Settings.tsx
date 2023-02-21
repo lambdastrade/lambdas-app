@@ -1,8 +1,13 @@
+import Header from '../../components/header/Header';
+
 const Settings: React.FunctionComponent = () => {
     return (
         <>
-            <div className="h-full bg-emerald-100 p-5 rounded-md border border-emerald-700 text-emerald-700">
-                Settings
+            <div className="space-y-5 w-full h-full flex flex-col flex-1">
+                <Header
+                    pageName="Settings"
+                    pageDescription="Manage your settings and preferences."
+                />
             </div>
         </>
     );

@@ -47,7 +47,7 @@ const TierList = (props: TierListProps) => {
                                                     )}>
                                                     <div className="p-3">
                                                         <h3
-                                                            className="text-base pb-2 font-semibold tracking-tight text-indigo-600"
+                                                            className="text-base pb-2 font-semibold tracking-tight text-gray-800"
                                                             id={tier.id}>
                                                             {tier.name}
                                                         </h3>
@@ -70,7 +70,7 @@ const TierList = (props: TierListProps) => {
                                                                         className="flex items-start align-middle">
                                                                         <div className="flex-shrink-0">
                                                                             <CheckIcon
-                                                                                className="h-5 w-5 stroke-2 mb-1 text-indigo-600"
+                                                                                className="h-5 w-5 stroke-2 mb-1 text-gray-800"
                                                                                 aria-hidden="true"
                                                                             />
                                                                         </div>
@@ -85,7 +85,7 @@ const TierList = (props: TierListProps) => {
                                                                     onClick={() => {
                                                                         onCheckoutClick(tier.id);
                                                                     }}
-                                                                    className="inline-block w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white hover:bg-indigo-700"
+                                                                    className="inline-block w-full rounded-lg bg-gray-800 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-white hover:bg-gray-900"
                                                                     aria-describedby={tier.id}>
                                                                     Choose plan
                                                                 </button>

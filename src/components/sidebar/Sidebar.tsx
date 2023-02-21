@@ -57,13 +57,7 @@ const Sidebar: React.FunctionComponent = () => {
                             </div>
                         </nav>
                     </div>
-                    <div className="flex justify-center border-t border-gray-200 p-4">
-                        <button
-                            type="button"
-                            className="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-14 py-2 text-sm text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 font-jakarta font-medium">
-                            Subscribe
-                        </button>
-                    </div>
+                    <div className="flex justify-center border-t border-gray-200 p-4"></div>
                 </div>
             </div>
         </div>

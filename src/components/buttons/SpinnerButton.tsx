@@ -14,12 +14,12 @@ export const SpinnerButton = (props: SpinnerButtonProps) => {
                     props.onClick();
                 }}
                 type="button"
-                className="inline-flex items-center rounded-md border border-transparent transition-all bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                className="inline-flex items-center rounded-md border border-transparent transition-all bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
                 {!props.isLoading && props.children}
                 {props.isLoading && (
                     <svg
                         aria-hidden="true"
-                        className="w-4 h-4 opacity-80 mr-2 text-neutral-100 animate-spin fill-blue-700"
+                        className="w-4 h-4 opacity-80 mr-2 text-gray-100 animate-spin fill-gray-900"
                         viewBox="0 0 100 101"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg">

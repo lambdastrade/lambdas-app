@@ -12,14 +12,13 @@ const LastEdited = () => {
 
     return (
         <div className="font-jakarta pb-5">
-            {/* <h2 className="text-sm font-medium text-gray-500">Recently Edited</h2> */}
             <ul
                 role="list"
                 className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
                 {lastEditedProjects.map((project: any) => (
                     <li
                         key={project.name}
-                        className="col-span-1 flex rounded-md hover:scale-105 cursor-pointer transform transition-all">
+                        className="col-span-1 flex rounded-md hover:scale-105 hover:bg-gray-50 bg-white cursor-pointer transform transition-all">
                         <div
                             className={classNames(
                                 project.hue,
@@ -27,7 +26,7 @@ const LastEdited = () => {
                             )}>
                             {project.name.slice(0, 2)}
                         </div>
-                        <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 bg-white">
+                        <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 ">
                             <div className="flex-1 truncate px-4 py-2 text-sm">
                                 <a
                                     // href={project.href}
