@@ -1,33 +1,53 @@
-import React from 'react';
-import { classNames } from '../../utils/classNames';
+import KPIChart from '../charts/KPIChart';
 import { ArrowDownRightIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline';
-import KPIChart from '../../components/charts/KPIChart';
+import { classNames } from '../../utils/classNames';
 
 const stats = [
     {
         id: 1,
-        name: 'Traded Amount',
+        name: 'Running Instances',
         stat: '$ 27,897',
         change: '$ 1,200',
         changeType: 'increase'
     },
     {
         id: 2,
-        name: 'Executed Trades',
+        name: 'Avg. Lifetime',
         stat: '133',
         change: '19',
         changeType: 'decrease'
     },
     {
         id: 3,
-        name: 'Sharpe Ratio',
+        name: 'Instance Heatmap',
+        stat: '127.3%',
+        change: '3.2%',
+        changeType: 'increase'
+    },
+    {
+        id: 4,
+        name: 'Est. Latency',
+        stat: '$ 27,897',
+        change: '$ 1,200',
+        changeType: 'increase'
+    },
+    {
+        id: 5,
+        name: 'Instance Health',
+        stat: '133',
+        change: '19',
+        changeType: 'decrease'
+    },
+    {
+        id: 6,
+        name: 'Overload',
         stat: '127.3%',
         change: '3.2%',
         changeType: 'increase'
     }
 ];
 
-const KPICards = () => {
+const DeploymentCards = () => {
     return (
         <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {stats.map((item) => (
@@ -77,4 +97,4 @@ const KPICards = () => {
     );
 };
 
-export default KPICards;
+export default DeploymentCards;

@@ -1,5 +1,5 @@
-import ActivityLog from '../../features/activity-log/components/ActivityLog';
-import KPICards from './KPICards';
+import KPICards from '../../components/cards/KPICards';
+import ActivityTable from '../../components/tables/ActivityTable';
 import StatsFilterGroup from './StatsFilterGroup';
 import TimeButtonGroup from './TimeButtonGroup';
 
@@ -11,7 +11,7 @@ const DashboardBody = () => {
                 <StatsFilterGroup />
             </div>
             <KPICards />
-            <ActivityLog />
+            <ActivityTable />
         </div>
     );
 };

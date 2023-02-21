@@ -1,7 +1,8 @@
 import { Cog6ToothIcon, PencilIcon } from '@heroicons/react/24/outline';
-import activity_data from '../../../data/mocked/activity_data';
+import React from 'react';
+import activity_data from '../../data/mocked/activity_data';
 
-const ActivityLog = () => {
+const ActivityTable = () => {
     const log_items = activity_data;
     return (
         <div className="my-10 space-y-5">
@@ -73,4 +74,4 @@ const ActivityLog = () => {
     );
 };
 
-export default ActivityLog;
+export default ActivityTable;
